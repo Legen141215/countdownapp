@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" onclick="playAudio()">
         <h1>Countdown to Our Big Day</h1>
         <h2>Anna &lt;3</h2>
         <h3>Event: Our First time meeting</h3>
@@ -20,11 +20,19 @@
         </div>
         <p>We can't wait to celebrate our special day together!</p>
         <p>From the moment we met, I knew this day would come. I love you, Anna 💖</p>
-        <audio controls autoplay loop>
+        <audio id="background-music" loop>
             https://www.bensound.com/bensound-music/bensound-romantic.mp3
             Your browser does not support the audio element.
         </audio>
     </div>
     <script src="script.js"></script>
+    <script>
+        function playAudio() {
+            var audio = document.getElementById('background-music');
+            if (audio.paused) {
+                audio.play();
+            }
+        }
+    </script>
 </body>
 </html>
